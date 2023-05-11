@@ -1,0 +1,29 @@
+ 
+INSTALLATION
+
+Prequisities
+- Must have python3 installed
+
+Download odoo source code via the link below
+- https://github.com/odoo/odoo/archive/16.0.zip
+
+
+Install postgres using the command below;
+
+- sudo apt install postgresql postgresql-client
+
+
+Configure postgres
+
+By default, the only user is postgres but Odoo forbids connecting as postgres, so you need to create a new PostgreSQL user: use the commands below;
+  - sudo -u postgres createuser -s $USER
+  - createdb $USER
+
+
+
+Install the dependencies using the command below;
+ - sed -n -e '/^Depends:/,/^Pre/ s/ python3-\(.*\),/python3-\1/p' debian/control | sudo xargs apt-get install -y
+
+
+ Run the odoo app using the command below
+ - python3 odoo-bin --addons-path=addons -d mydb
