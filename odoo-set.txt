@@ -27,3 +27,4 @@ Install the dependencies using the command below;
 
  Run the odoo app using the command below
  - python3 odoo-bin --addons-path=addons -d mydb
+ - python3 odoo-bin --addons-path=addons -d odoodev
